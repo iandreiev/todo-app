@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Tasks</h1>
+  <a class="btn btn-success" href="/add_task"> Add Task</a>
+  <ul class="list-group">
+    {% for article in articles %}
+      <li class="list-group-item"><a href="task/{{article.id}}">{{article.title}}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

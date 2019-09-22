@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>{{article.title}}</h1>
+  <!-- <small>Written by {{article.author}} on {{article.create_date}}</small> -->
+
+  <hr>
+  <div>
+    {{article.body | safe}}
+  </div>
+
+  <div class="float-btn-block">
+      <a class="" href="/edit_task/{{article.id}}">
+        <i class="fas fa-edit"></i> Edit
+      </a>
+    </div>
+  
+{% endblock %}

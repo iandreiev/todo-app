@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<!-- <small> Welcome {{session.username}}</small> -->
+
+
+<div class="card-columns">
+  {% for article in articles %}
+  <div class="card">
+      <div class="card-body">
+          <a href="/task/{{article.id}}"><h5 class="card-title">{{article.title}}</h5></a>
+          <p class="card-text">{{article.body | safe}}</p>
+          <p class="card-text"><small class="text-muted">{{article.create_date}}</small></p>
+
+        </div>
+
+  </div>
+  {% endfor %}
+  
+</div>
+
+<div class="float-btn-block">
+  <a class="" href="/add_task">
+    <i class="fas fa-plus"></i> Add task
+  </a>
+</div>
+
+{% endblock %}
